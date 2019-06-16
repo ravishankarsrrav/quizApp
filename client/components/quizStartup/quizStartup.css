@@ -1,0 +1,19 @@
+.instruction-header {
+    color: #303B6F;
+}
+
+.instruction-points {
+	font-size: 14px;
+	padding-bottom: 6px;
+	font-weight: 401;
+	padding-left: 10px;
+	color: black;
+}
+
+.start-quiz-btn {
+	padding-right: 80px;
+	padding-left: 80px;
+	font-size: 16px;
+	font-weight: 400;
+	cursor: pointer;
+}
