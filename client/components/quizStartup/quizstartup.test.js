@@ -19,4 +19,4 @@ describe("QuizStartup component", () => {
 		const wrapper = mount(<QuizStartup startQuiz={clickFn} />);
 		expect(Cookies.get()).toBe('test');
 	});
-});	
+});

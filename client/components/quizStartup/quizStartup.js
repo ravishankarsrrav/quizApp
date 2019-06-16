@@ -12,9 +12,12 @@ class QuizStartup extends Component {
 	}
 
 	startQuiz() {
+		let inTenMinutes = new Date(new Date().getTime() + 11 * 60 * 1000);
 		let cookie = Cookies.get("quizID");
 		cookie = (cookie == undefined) ? uuid.v4() : cookie;
-		Cookies.set("quizID", cookie);
+		Cookies.set("quizID", cookie, {
+			expires: inTenMinutes
+		});
 		window.location.href = '/quiz';
 	}
 
