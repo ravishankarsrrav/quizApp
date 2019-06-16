@@ -5,7 +5,7 @@ const outputDirectory = 'dist';
 module.exports = {
   entry:
   {
-    
+    'quizStartup': path.join(__dirname, 'client/views/quizStartup/quizStartup.js'),
   },
   output: {
     path: path.join(__dirname, outputDirectory),
