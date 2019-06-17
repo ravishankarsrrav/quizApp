@@ -11,10 +11,16 @@ class QuizStartup extends Component {
 		this.startQuiz = this.startQuiz.bind(this);
 	}
 
+	componentDidMount() {
+		const quizID = CookieManager.get("quizID");
+		if (quizID != null) {
+			window.location.href = 'http://localhost:8080/quiz';
+		}
+	}	
+
 	startQuiz() {
-		let cookie = CookieManager.get("quizID");
-		cookie = (cookie == null) ? uuid.v4() : cookie;
-		CookieManager.set("quizID", cookie);
+		const quizID = uuid.v4();
+		CookieManager.set("quizID", quizID);
 		window.location.href = '/quiz';
 	}
 
