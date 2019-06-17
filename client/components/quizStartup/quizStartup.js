@@ -14,7 +14,7 @@ class QuizStartup extends Component {
 	componentDidMount() {
 		const quizID = CookieManager.get("quizID");
 		if (quizID != null) {
-			// window.location.href = 'http://localhost:8080/quiz';
+			window.location.href = 'http://localhost:8080/quiz';
 		}
 	}	
 

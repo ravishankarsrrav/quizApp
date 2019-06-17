@@ -3,26 +3,34 @@ import './quiz.css';
 import Header from '../header/header';
 import CookieManager from '../../utils/cookieManager';
 
-class QuizStartup extends Component {
+class Quiz extends Component {
 	constructor() {
 		super();
-		questionNo : 1
+		this.state = {
+			questionNo: 1
+		}
 	}
 
 	componentDidMount() {
 		const quizID = CookieManager.get("quizID");
-		if (quizID != null) {
-			// window.location.href = 'http://localhost:8080/start';
+		if (quizID == null) {
+			window.location.href = 'http://localhost:8080/start';
 		}
 	}
 
   	render() {
-    return (
-    <div>
-        <Header showEndTest={true} leftTime={'00:10:00'} />
-    </div>   
-    );
+	  	const { questionNo } = this.state;
+	    return (
+	    <div>
+	        <Header showEndTest={true} leftTime={'00:10:00'} />
+	        <div className="container">
+	        	<div className='col-sm-10 mt-3 question-header'><h5>Question {questionNo}</h5>
+	        		<hr></hr>
+	  			</div>
+	        </div>
+	    </div>   
+	    );
   	}
 }
 
-export default QuizStartup;
+export default Quiz;
