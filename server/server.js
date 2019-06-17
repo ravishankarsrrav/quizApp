@@ -7,6 +7,7 @@ const path = require('path');
 app.use('/static', express.static(path.join(__dirname, '../public')));
 app.use('/js', express.static(path.join(__dirname, '../dist')));
 app.use('/start', express.static(path.join(__dirname, '../client/views/quizStartup/quizStartup.html')));
+app.use('/quiz', express.static(path.join(__dirname, '../client/views/quiz/quiz.html')));
 
 // request to redirect to start
 app.get('/', (req, res, next) => {

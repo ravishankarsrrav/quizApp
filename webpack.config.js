@@ -6,6 +6,7 @@ module.exports = {
   entry:
   {
     'quizStartup': path.join(__dirname, 'client/views/quizStartup/quizStartup.js'),
+    'quiz': path.join(__dirname, 'client/views/quiz/quiz.js'),
   },
   output: {
     path: path.join(__dirname, outputDirectory),

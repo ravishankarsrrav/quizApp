@@ -14,7 +14,7 @@ class QuizStartup extends Component {
 	componentDidMount() {
 		const quizID = CookieManager.get("quizID");
 		if (quizID != null) {
-			window.location.href = 'http://localhost:8080/quiz';
+			// window.location.href = 'http://localhost:8080/quiz';
 		}
 	}	
 
@@ -27,7 +27,7 @@ class QuizStartup extends Component {
   	render() {
     return (
     <div>
-        <Header showEndTest={false}/>
+        <Header showEndTest={false} />
         <div className="container">
 		  	<div className='col-sm-10 mt-4 instruction-header'><h5>Please take a moment to read the instructions.</h5>
 		        <hr></hr>

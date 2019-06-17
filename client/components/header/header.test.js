@@ -5,9 +5,14 @@ import Adapter from "enzyme-adapter-react-16";
 
 Enzyme.configure({ adapter: new Adapter() });
 
+const sessionStorageMock = {
+	clear: jest.fn()
+};
+global.sessionStorage = sessionStorageMock;
+
 describe("Header component", () => {
 	test("renders", () => {
-		const wrapper = shallow(<Header />);
+		const wrapper = shallow(<Header leftTime={"00:10:00"} />);
 		expect(wrapper.exists()).toBe(true);
 	});
 
@@ -22,10 +27,10 @@ describe("Header component", () => {
 		expect(wrapper.find("span.header-end-test").hasClass('hidden')).toEqual(true);
 	});
 
-	test("whether left time update in header component is working", () => {
-		const wrapper = mount(<Header leftTime={"00:10:00"} />);
-		expect(wrapper.find("span.header-time").text()).toEqual("00:10:00 left");
-		wrapper.setProps({leftTime : "00:09:59"});
-		expect(wrapper.find("span.header-time").text()).toEqual("00:09:59 left");
+	test('should check stop quiz function',() => {
+		const clickFn = jest.fn();
+	    const app = shallow(<Header leftTime={"00:10:00"} showEndTest={true} stopQuiz={clickFn} />);
+	    app.find('span.header-end-test').simulate('click');
+	    expect(sessionStorage.clear.mock.calls).toHaveLength(1);
 	});
 });
