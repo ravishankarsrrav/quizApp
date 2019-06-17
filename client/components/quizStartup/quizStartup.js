@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './QuizStartup.css';
 import Header from '../header/header';
-import Cookies from 'js-cookie';
-const uuid = require("uuid");
+import CookieManager from '../../utils/cookieManager';
 
+const uuid = require("uuid");
 
 class QuizStartup extends Component {
 	constructor() {
@@ -12,12 +12,9 @@ class QuizStartup extends Component {
 	}
 
 	startQuiz() {
-		let inTenMinutes = new Date(new Date().getTime() + 11 * 60 * 1000);
-		let cookie = Cookies.get("quizID");
-		cookie = (cookie == undefined) ? uuid.v4() : cookie;
-		Cookies.set("quizID", cookie, {
-			expires: inTenMinutes
-		});
+		let cookie = CookieManager.get("quizID");
+		cookie = (cookie == null) ? uuid.v4() : cookie;
+		CookieManager.set("quizID", cookie);
 		window.location.href = '/quiz';
 	}
 
@@ -30,6 +27,7 @@ class QuizStartup extends Component {
 		        <hr></hr>
 		        <li className='instruction-points'>The quiz will have 10 questions, each question will have four options select one of the correct options.</li>
 		        <li className='instruction-points'>The quiz will automatically end in 10 minutes after the start time.</li>
+		        <li className='instruction-points'>Don't close the browser tab in-between.</li>
 		        <li className='instruction-points'>The quiz is just for fun!</li>
 		  	</div>
 		  	<div className='col-sm-10 mt-3'>
