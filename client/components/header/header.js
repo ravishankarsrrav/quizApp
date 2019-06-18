@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './header.css';
+import CookieManager from '../../utils/cookieManager';
 
 class Header extends Component {
 	constructor(props) {
@@ -11,8 +12,9 @@ class Header extends Component {
 		this.stopQuiz = this.stopQuiz.bind(this);
 	}
 	componentDidMount() {
-		let { leftTime } = this.state;
-		if (leftTime != null || leftTime != undefined) {
+		let { leftTime, showEndTest } = this.state;
+		leftTime = (CookieManager.get("leftTime") != null) ? CookieManager.get("leftTime") : leftTime;
+		if ((leftTime != null || leftTime != undefined) && showEndTest) {
 			const splitTime = leftTime.split(':');
 			let hours = splitTime[0];
 			let minutes = splitTime[1];
@@ -41,12 +43,13 @@ class Header extends Component {
 				}
 
 				phours = (hours < 10 && hours.length < 2) ? `0${hours}` : hours;  
-				pseconds = (seconds < 10) ? `0${seconds}` : seconds;  
-				pminutes = (minutes < 10) ? `0${minutes}` : minutes;
+				pseconds = (seconds < 10 && seconds.length < 2) ? `0${seconds}` : seconds;  
+				pminutes = (minutes < 10 && minutes.length < 2) ? `0${minutes}` : minutes;
 				leftTime = `${phours}:${pminutes}:${pseconds}`;
 				this.setState({
 					leftTime : leftTime
 				});
+				CookieManager.set("leftTime", leftTime);
 			}, 1000);
 		}
 	}
@@ -57,7 +60,7 @@ class Header extends Component {
 
 	render() {
 		const { leftTime,showEndTest } = this.state;
-		let showEndTestClass = showEndTest ? 'loading' : 'hidden';
+		let showEndTestClass = showEndTest ? '' : 'hidden';
 		return (
 			<div className='d-flex justify-content-between header'>
 			<span className='header-main'>Quiz Application</span>

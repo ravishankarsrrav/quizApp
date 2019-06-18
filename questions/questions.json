@@ -1,0 +1,52 @@
+[
+  {
+    "id": 707860,
+    "question": "Who is father of our nation ?",
+    "options" : ["Mahatma Gandhi", "Rajiv Gandhi", "Sanjay Gandhi", "Jawaharalal Nehru"]
+  },
+  {
+    "id": 707862,
+    "question": "Which is the capital city of India ?",
+    "options" : ["Delhi", "Bangalore", "Gujarat", "Chennai"]
+  },
+  {
+    "id": 707863,
+    "question": "Which is the capital city of Karnataka ?",
+    "options" : ["Delhi", "Bangalore", "Gujarat", "Chennai"]
+  },
+  {
+    "id": 707861,
+    "question": "Who is father of our nation ?",
+    "options" : ["Mahatma Gandhi", "Rajiv Gandhi", "Sanjay Gandhi", "None of the above"]
+  },
+  {
+    "id": 707864,
+    "question": "Which is the capital city of Tamilnadu ?",
+    "options" : ["Delhi", "Bangalore", "Gujarat", "Chennai"]
+  },
+  {
+    "id": 707865,
+    "question": "Which is the capital city of Goa ?",
+    "options" : ["Panaji", "Bangalore", "Gujarat", "Chennai"]
+  },
+  {
+    "id": 707866,
+    "question": "Which is the capital city of Kerala ?",
+    "options" : ["Panaji", "Thiruvanantapuram", "Gujarat", "Chennai"]
+  },
+  {
+    "id": 707867,
+    "question": "Which is the capital city of Punjab ?",
+    "options" : ["Panaji", "Chandigarh", "Gujarat", "Chennai"]
+  },
+  {
+    "id": 707868,
+    "question": "Which is the capital city of Rajasthan ?",
+    "options" : ["Panaji", "Jaipur", "Gujarat", "Chennai"]
+  },
+  {
+    "id": 707868,
+    "question": "Which is the capital city of Gujarat ?",
+    "options" : ["Panaji", "Gandhinagar", "Gujarat", "Chennai"]
+  }
+]  

@@ -1,3 +1,38 @@
 .question-header {
     color: #303B6F;
 }
+
+.question-box {
+    color: #616161;
+    font-size: 16px;
+    font-weight: 450;
+    padding: 10px;
+}
+
+body {
+	 background: #F3F6FA;
+}
+
+.navigation-box {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 0px !important;
+}
+
+.navigation-btn {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+
+.question-option-box {
+    padding: 10px;
+    background: white;
+    border: 1px #CCD4DA solid;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 450;
+    color: #616161;
+}
