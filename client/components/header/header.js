@@ -56,6 +56,7 @@ class Header extends Component {
 
 	stopQuiz() {
 		sessionStorage.clear();
+		window.location.href= 'http://localhost:8080/finish';
 	}
 
 	render() {
