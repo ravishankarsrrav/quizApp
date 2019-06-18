@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './QuizStartup.css';
+import './quizStartup.css';
 import Header from '../header/header';
 import CookieManager from '../../utils/cookieManager';
 
