@@ -52,6 +52,19 @@ command to run a server in nodemon mode in port 8080
 npm run start-server:dev
 ```
 
+command to run test cases
+
+```
+npm run test
+```
+
+command to run test cases with coverage
+
+```
+npm run test:coverage
+```
+
+
 ### And coding style tests
 
 ```
